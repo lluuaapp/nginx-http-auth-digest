@@ -769,6 +769,14 @@ ngx_http_auth_digest_verify_hash(ngx_http_request_t *r, ngx_http_auth_digest_cre
     info_header->key = hkey;
     info_header->value = hval;
     info_header->hash = 1;
+
+    /* This should be quite safe as long as r->headers_in.authorization
+     * doesn't get modified. See:
+     * https://github.com/atomx/nginx-http-auth-digest/blob/9a402045082291c1f2f0a432ac24475277e2d176/ngx_http_auth_digest_module.c#L338
+     * Otherwise we should make a copy here.
+     */
+    r->headers_in.user = fields->username;
+
     return NGX_OK;
   }else{
   invalid:

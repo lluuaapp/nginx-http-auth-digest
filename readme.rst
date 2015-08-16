@@ -173,3 +173,15 @@ auth_digest_shm_size
 .. _Digest Authentication: http://en.wikipedia.org/wiki/Digest_access_authentication
 .. _Issue Tracker: https://github.com/samizdatco/nginx-http-auth-digest/issues
 .. _MitM: http://en.wikipedia.org/wiki/Man-in-the-middle_attack
+
+Testing
+==========
+Make sure to compile nginx with the ngx_echo module: https://github.com/openresty/echo-nginx-module::
+
+    $ ./configure --add-module=../samizdatco-nginx-http-auth-digest-xxxxxxx --add-module=../echo-nginx-module  [other configure options]
+
+After that you can run the test against the nginx binary::
+
+    $ cd test
+    $ NGINX=/home/erik/nginx-1.9.1/objs/nginx ./test.sh
+
