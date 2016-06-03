@@ -227,7 +227,6 @@ ngx_http_auth_digest_handler(ngx_http_request_t *r)
             rc = ngx_http_auth_digest_verify_user(r, auth_fields, &passwd_line);
     
             if (rc == NGX_HTTP_AUTH_DIGEST_USERNOTFOUND) {
-              ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "invalid username or password for %*s", auth_fields->username.len, auth_fields->username.data);
               rc = NGX_DECLINED;
             }
     
@@ -252,7 +251,6 @@ ngx_http_auth_digest_handler(ngx_http_request_t *r)
           passwd_line.len = i-begin;
           rc = ngx_http_auth_digest_verify_user(r, auth_fields, &passwd_line);
           if (rc == NGX_HTTP_AUTH_DIGEST_USERNOTFOUND) {
-            ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "invalid username or password for %*s", auth_fields->username.len, auth_fields->username.data);
             rc = NGX_DECLINED;
           }
           if (rc != NGX_DECLINED){
@@ -272,6 +270,7 @@ ngx_http_auth_digest_handler(ngx_http_request_t *r)
     }
 
     ngx_http_auth_digest_close(&file);
+    ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "invalid username or password for %*s", auth_fields->username.len, auth_fields->username.data);
 
     // since no match was found based on the fields in the authorization header,
     // send a new challenge and let the client retry
