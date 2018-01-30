@@ -5,11 +5,11 @@ Nginx Digest Authentication module
 Changes from other forks
 ========================
 Bug fixes
-`1 <https://github.com/atomx/nginx-http-auth-digest/commit/9d77dcc58420d5afb8aa5a8138b1bf22a1933dd6>`_, 
-`2 <https://github.com/atomx/nginx-http-auth-digest/commit/b98725d3d0506c895f6a9f9d38f9168d499275fc>`_,
-`3 <https://github.com/atomx/nginx-http-auth-digest/commit/47d5bac13cf071b4dbe81048b0f12a742ba512ae>`_
+`1 <https://github.com/samizdatco/nginx-http-auth-digest/commit/9d77dcc58420d5afb8aa5a8138b1bf22a1933dd6>`_, 
+`2 <https://github.com/samizdatco/nginx-http-auth-digest/commit/b98725d3d0506c895f6a9f9d38f9168d499275fc>`_,
+`3 <https://github.com/samizdatco/nginx-http-auth-digest/commit/47d5bac13cf071b4dbe81048b0f12a742ba512ae>`_
 
-`Added log message for invalid login attempts <https://github.com/atomx/nginx-http-auth-digest/commit/9a402045082291c1f2f0a432ac24475277e2d176>`_
+`Added log message for invalid login attempts <https://github.com/samizdatco/nginx-http-auth-digest/commit/9a402045082291c1f2f0a432ac24475277e2d176>`_
 
 Description
 ===========
